@@ -514,6 +514,7 @@
     var calcService = "landing";
     var calcBaseIndex = 1;
     var calcChecked = {};
+    var lastCalcSummary = null;
 
     function fmt(n) {
       return n.toLocaleString("ru-RU");
@@ -585,6 +586,44 @@
       } else {
         calcTimeEl.textContent = "Срок: " + dMin + "–" + dMax + " дн.";
       }
+      syncCalcSummary();
+    }
+
+    function buildCalcSummary() {
+      var data = calcData[calcService];
+      var base = data.base[calcBaseIndex];
+      var total = base.p;
+      var daysPlus = 0;
+      var parts = [];
+      data.options.forEach(function (item, i) {
+        if (calcChecked[calcService + "-" + i]) {
+          total += item.p;
+          daysPlus += item.d;
+          parts.push(item.t);
+        }
+      });
+      var dMin = base.d;
+      var dMax = base.d + daysPlus;
+      var range = dMax === dMin ? pluralDays(dMin) : dMin + "–" + dMax + " дн.";
+      return (
+        "Задача: " + data.label + " — " + base.t + ".\n" +
+        "Дополнительно: " + (parts.join(", ") || "—") + ".\n" +
+        "Расчёт с калькулятора: от " + fmt(base.p) + " ₽.\n" +
+        "Итого с выбранными опциями: " + fmt(total) + " ₽ · Срок: " + range + "."
+      );
+    }
+
+    function syncCalcSummary() {
+      var form = document.getElementById("contactForm");
+      if (!form) return;
+      var msg = form.querySelector('textarea[name="message"]');
+      if (!msg) return;
+      if (msg.value !== lastCalcSummary) return;
+      var next = buildCalcSummary();
+      if (next !== lastCalcSummary) {
+        msg.value = next;
+        lastCalcSummary = next;
+      }
     }
 
     function selectCalcService(key, focusCalc) {
@@ -620,17 +659,8 @@
         if (!form) return;
         var msg = form.querySelector('textarea[name="message"]');
         if (!msg) return;
-        var data = calcData[calcService];
-        var base = data.base[calcBaseIndex];
-        var parts = [];
-        data.options.forEach(function (item, i) {
-          if (calcChecked[calcService + "-" + i]) parts.push(item.t);
-        });
-        var summary =
-          "Задача: " + data.label + " — " + base.t + ".\n" +
-          "Дополнительно: " + (parts.join(", ") || "—") + ".\n" +
-          "Расчёт с калькулятора: от " + fmt(base.p) + " ₽.";
-        msg.value = summary;
+        msg.value = buildCalcSummary();
+        lastCalcSummary = msg.value;
       });
     }
 
@@ -793,6 +823,7 @@
   var form = document.getElementById("contactForm");
   if (form) {
     var successBox = document.getElementById("formSuccess");
+    var errorBox = document.getElementById("formError");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var valid = true;
@@ -811,15 +842,41 @@
       label.textContent = "Отправляю…";
       btn.disabled = true;
 
-      setTimeout(function () {
-        btn.disabled = false;
-        label.textContent = original;
-        form.reset();
-        successBox.classList.add("is-visible");
-        setTimeout(function () {
+      var payload = {};
+      form.querySelectorAll("[name]").forEach(function (input) {
+        payload[input.name] = input.value;
+      });
+      payload._captcha = "false";
+      payload._subject = "Заявка с сайта: " + (payload.name || "посетитель");
+
+      fetch("https://formsubmit.co/ajax/DmmShiryev@yandex.ru", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
+        .then(function () {
+          btn.disabled = false;
+          label.textContent = original;
+          form.reset();
+          errorBox.classList.remove("is-visible");
+          successBox.classList.add("is-visible");
+          setTimeout(function () {
+            successBox.classList.remove("is-visible");
+          }, 6000);
+        })
+        .catch(function () {
+          btn.disabled = false;
+          label.textContent = original;
           successBox.classList.remove("is-visible");
-        }, 6000);
-      }, 900);
+          errorBox.classList.add("is-visible");
+          setTimeout(function () {
+            errorBox.classList.remove("is-visible");
+          }, 6000);
+        });
     });
 
     form.querySelectorAll(".form__input").forEach(function (input) {
