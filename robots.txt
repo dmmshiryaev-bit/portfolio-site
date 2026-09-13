@@ -1,0 +1,34 @@
+# GEO: доступ для поисковых и AI-краулеров.
+# search — поисковая выдача, ai-input — ответы ChatGPT/Perplexity, ai-train — обучение моделей.
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Ответы ChatGPT и поиск OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Claude (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity и Google для AI-ответов
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://dmitry-shiryaev.vercel.app/sitemap.xml

@@ -1,0 +1,6 @@
+# Лишние локальные файлы не загружаем на Vercel
+dmitry-portfolio.txt
+*.ps1
+SEO-CONVENTIONS.md
+node_modules
+.vercel

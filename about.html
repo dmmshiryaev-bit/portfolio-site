@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обо мне — Дмитрий Ширяев</title>
+    <meta name="description" content="Дмитрий Ширяев — фриланс-веб-разработчик из Нижнего Новгорода. Вайб-кодинг, лендинги, калькуляторы, чат-боты." />
+    <link rel="canonical" href="/about.html" />
+    <meta property="og:title" content="Обо мне — Дмитрий Ширяев" />
+    <meta property="og:description" content="Фриланс-веб-разработчик из Нижнего Новгорода. Вайб-кодинг, лендинги, калькуляторы, чат-боты." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://dmitry-shiryaev.vercel.app/about.html" />
+    <meta name="author" content="Дмитрий Ширяев" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfilePage",
+          "@id": "https://dmitry-shiryaev.vercel.app/#webpage",
+          "url": "https://dmitry-shiryaev.vercel.app/about.html",
+          "name": "Обо мне — Дмитрий Ширяев",
+          "description": "Фриланс-веб-разработчик из Нижнего Новгорода. Вайб-кодинг, лендинги, калькуляторы, чат-боты.",
+          "inLanguage": "ru",
+          "isPartOf": { "@id": "https://dmitry-shiryaev.vercel.app/#website" },
+          "mainEntity": { "@id": "https://dmitry-shiryaev.vercel.app/#person" },
+          "datePublished": "2026-09-13",
+          "dateModified": "2026-09-13"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dmitry-shiryaev.vercel.app/#website",
+          "name": "Дмитрий Ширяев — веб-разработчик",
+          "url": "https://dmitry-shiryaev.vercel.app/",
+          "inLanguage": "ru",
+          "publisher": { "@id": "https://dmitry-shiryaev.vercel.app/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://dmitry-shiryaev.vercel.app/#person",
+          "name": "Дмитрий Ширяев",
+          "url": "https://dmitry-shiryaev.vercel.app/about.html",
+          "image": "https://dmitry-shiryaev.vercel.app/img/фото.jfif",
+          "jobTitle": "Веб-разработчик (вайб-кодинг)",
+          "email": "mailto:DmmShiryev@yandex.ru",
+          "address": { "@type": "PostalAddress", "addressLocality": "Нижний Новгород", "addressCountry": "RU" },
+          "knowsAbout": ["лендинги", "калькуляторы цен", "чат-боты с ИИ", "MVP", "SEO", "GEO-продвижение"],
+          "sameAs": [
+            "https://max.ru/u/f9LHodD0cOKdJPhYGMLWhbecW1BcaRQ_45GFe5sC0_zaYHqW1RkVtHioQXk",
+            "https://github.com/dmmshiryaev-bit",
+            "https://dmmshiryaev-bit.github.io/habit-tracker"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://dmitry-shiryaev.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Обо мне", "item": "https://dmitry-shiryaev.vercel.app/about.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css?v=23" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="orb orb--a" data-depth="0.25"></div>
+      <div class="orb orb--b" data-depth="0.45"></div>
+      <div class="orb orb--c" data-depth="0.15"></div>
+      <div class="bg__grid"></div>
+    </div>
+
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__dot"></div>
+      <div class="cursor__ring"></div>
+    </div>
+
+    <header class="header">
+      <div class="container header__inner">
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Главная</a>
+          <a href="index.html#services" class="nav__link">Услуги</a>
+          <a href="index.html#projects" class="nav__link">Проекты</a>
+          <a href="index.html#contact" class="nav__link">Контакты</a>
+          <a href="about.html" class="nav__link is-active">Обо мне</a>
+          <a href="index.html#contact" class="btn btn--primary nav__cta">Обсудить проект</a>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4.5"></circle>
+              <path d="M12 1.5v2.5M12 20v2.5M3.34 3.34l1.77 1.77M18.89 18.89l1.77 1.77M1.5 12H4M20 12h2.5M3.34 20.66l1.77-1.77M18.89 5.11l1.77-1.77"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"></path>
+            </svg>
+          </button>
+          <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section page-intro">
+        <div class="container page-intro__grid">
+          <div class="page-intro__content">
+            <span class="section__tag reveal">Обо мне</span>
+            <h1 class="page-intro__title reveal js-text-expand" data-delay="100" data-expand tabindex="0" aria-haspopup="dialog" aria-expanded="false">
+              Привет, меня зовут <span class="grad">Дмитрий Ширяев</span>
+              <span class="expand-hint" aria-hidden="true">⤢ показать целиком</span>
+            </h1>
+            <p class="page-intro__motto reveal" data-delay="150">
+              «Делаю то, что работает сегодня. <span class="grad">Изучаю то, что будет
+              работать завтра!</span>»
+            </p>
+            <div class="page-intro__fade js-text-expand" data-expand tabindex="0" aria-haspopup="dialog" aria-expanded="false">
+              <p class="page-intro__sub reveal" data-delay="200">
+                Веб-разработчик из Нижнего Новгорода. Фриланс для меня — не просто
+                подработка, а способ прокачивать навыки и сразу применять их в реальных
+                проектах.
+              </p>
+              <p class="page-intro__sub page-intro__sub--dim reveal" data-delay="250">
+                При этом у меня есть основная работа вне IT, поэтому я особенно ценю
+                чёткость, время, сроки и понятные задачи — и сам даю клиенту именно
+                такой формат сотрудничества.
+              </p>
+            </div>
+            <a href="index.html#contact" class="btn btn--primary reveal" data-delay="300" data-magnetic>
+              <span class="btn__label">Обсудить проект</span>
+              <span class="btn__arrow">→</span>
+            </a>
+          </div>
+
+          <div class="page-intro__visual reveal" data-delay="150">
+            <div class="profile-card tilt" data-tilt>
+              <div class="profile-card__top">
+                <div class="profile-card__avatar">
+                  <img class="profile-card__photo" src="img/фото.jfif" alt="Дмитрий Ширяев">
+                </div>
+                <div class="profile-card__name">
+                  <strong>Дмитрий Ширяев</strong>
+                  <span>фриланс-веб-разработчик</span>
+                </div>
+              </div>
+
+              <div class="profile-card__stats">
+                <div class="profile-card__stat">
+                  <span class="profile-card__stat-num">Нижний Новгород</span>
+                  <span class="profile-card__stat-label">город</span>
+                </div>
+                <div class="profile-card__stat">
+                  <span class="profile-card__stat-num">HTML / CSS / JS</span>
+                  <span class="profile-card__stat-label">основной стек</span>
+                </div>
+                <div class="profile-card__stat">
+                  <span class="profile-card__stat-num">React / Vite / Tailwind</span>
+                  <span class="profile-card__stat-label">сложные задачи</span>
+                </div>
+              </div>
+
+              <div class="profile-card__tags">
+                <span class="chip">Git / GitHub</span>
+                <span class="chip chip--ghost">VK API</span>
+                <span class="chip chip--ghost">ProxyAPI</span>
+                <span class="chip">AI-инструменты</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Zerocoder</span><i>✦</i>
+          <span>Вайб-кодинг</span><i>✦</i>
+          <span>Git / GitHub</span><i>✦</i>
+          <span>UI/UX</span><i>✦</i>
+          <span>AI-инструменты</span><i>✦</i>
+          <span>Open Code</span><i>✦</i>
+          <span>QWEN</span><i>✦</i>
+          <span>Zerocoder</span><i>✦</i>
+          <span>Вайб-кодинг</span><i>✦</i>
+          <span>Git / GitHub</span><i>✦</i>
+          <span>UI/UX</span><i>✦</i>
+          <span>AI-инструменты</span><i>✦</i>
+          <span>Open Code</span><i>✦</i>
+          <span>QWEN</span><i>✦</i>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Мой подход</span>
+            <h2 class="section__title">Не «нажимаю кнопку», а решаю задачу</h2>
+          </div>
+
+          <div class="approach-grid">
+            <article class="card-tile card-tile--accent reveal">
+              <span class="card-tile__icon">⚡</span>
+              <h3 class="card-tile__title">Быстрый старт</h3>
+              <p class="card-tile__text">
+                Не трачу время на ТЗ на 40 страниц. Ставлю точный промпт в Open Code,
+                получаю базовый код — и дальше докручиваю вручную.
+              </p>
+            </article>
+            <article class="card-tile card-tile--accent reveal" data-delay="100">
+              <span class="card-tile__icon">🧩</span>
+              <h3 class="card-tile__title">Ручная доводка</h3>
+              <p class="card-tile__text">
+                Добавляю логику, проверяю UX, тестирую на реальных сценариях. Если нужно —
+                подтягиваю QWEN для консультации.
+              </p>
+            </article>
+            <article class="card-tile card-tile--accent reveal" data-delay="200">
+              <span class="card-tile__icon">✅</span>
+              <h3 class="card-tile__title">Ответственность</h3>
+              <p class="card-tile__text">
+                Ставлю задачу, контролирую результат и отвечаю за то, что отдаю клиенту.
+                Довожу всё до конца, соблюдаю договорённости и остаюсь на связи.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Что уже сделал</span>
+            <h2 class="section__title">Из портфолио</h2>
+          </div>
+
+          <div class="projects__grid reveal-group">
+            <article class="project-card tilt" data-tilt>
+              <div class="project-card__screen project-card__screen--calc">
+                <img class="project-card__img" src="img/шкаф.jpg" alt="Лендинг с калькулятором — Шкаф для санузла" loading="lazy" />
+                <span class="project-card__tag">Лендинг + калькулятор</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Шкаф для санузла + калькулятор</h3>
+                <p class="project-card__desc">
+                  Лендинг для производителя шкафов с калькулятором цены и сроков, плюс
+                  проработка УТП и базовая аналитика по аудитории и конкурентам.
+                </p>
+                <a class="project-card__link" href="https://billowing-boat-d3ac.dmmshiryaev.workers.dev/" target="_blank" rel="noopener">Открыть проект →</a>
+                <div class="project-card__meta">HTML5 / CSS3 / Vanilla JS</div>
+              </div>
+            </article>
+
+            <article class="project-card tilt" data-tilt>
+              <div class="project-card__screen project-card__screen--bot">
+                <img class="project-card__img" src="img/чат  бот.png" alt="ВК-бот «Блюда от бот-повара»" loading="lazy" />
+                <span class="project-card__tag">AI-бот</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">ВК-бот «Блюда от бот-повара»</h3>
+                <p class="project-card__desc">
+                  Бот не выдаёт шаблонные ответы, а ведёт живой диалог с пользователями
+                  через ProxyAPI.
+                </p>
+                <div class="project-card__meta">VK API / ProxyAPI</div>
+              </div>
+            </article>
+
+            <article class="project-card tilt" data-tilt>
+              <div class="project-card__screen project-card__screen--pool">
+                <img class="project-card__img" src="img/Калькулятор.png" alt="Конструктор бассейнов — 3D-визуализация" loading="lazy" />
+                <span class="project-card__tag">3D-визуализация</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Конструктор бассейнов</h3>
+                <p class="project-card__desc">
+                  3D-визуализация: можно менять размеры в реальном времени и сразу видеть
+                  подбор оборудования.
+                </p>
+                <div class="project-card__meta">React / Vite / Tailwind</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Инструменты</span>
+            <h2 class="section__title">Стек и технологии</h2>
+          </div>
+
+          <div class="stack-grid reveal">
+            <div class="stack-col">
+              <h3 class="stack-col__title">Фронтенд</h3>
+              <div class="stack-col__list">
+                <span class="stack-item">HTML5</span>
+                <span class="stack-item">CSS3</span>
+                <span class="stack-item">Vanilla JS</span>
+                <span class="stack-item">React</span>
+                <span class="stack-item">Vite</span>
+                <span class="stack-item">Tailwind</span>
+              </div>
+            </div>
+            <div class="stack-col">
+              <h3 class="stack-col__title">Боты и API</h3>
+              <div class="stack-col__list">
+                <span class="stack-item">VK API</span>
+                <span class="stack-item">ProxyAPI</span>
+                <span class="stack-item">AI-инструменты</span>
+                <span class="stack-item">Open Code</span>
+                <span class="stack-item">QWEN</span>
+              </div>
+            </div>
+            <div class="stack-col">
+              <h3 class="stack-col__title">Процесс</h3>
+              <div class="stack-col__list">
+                <span class="stack-item">Git</span>
+                <span class="stack-item">GitHub</span>
+                <span class="stack-item">Вайб-кодинг</span>
+                <span class="stack-item">UI/UX</span>
+                <span class="stack-item">Промпт-инжиниринг</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="about-cta reveal">
+            <span class="about-cta__spark">✦</span>
+            <blockquote class="about-cta__quote">
+              «Делаю то, что работает сегодня.<br />Изучаю то, что будет работать завтра!»
+            </blockquote>
+            <p class="about-cta__text">
+              Если у тебя есть идея — давай превратим её в рабочий продукт: твоя идея плюс
+              мой промпт — и получаем результат.
+            </p>
+            <div class="about-cta__buttons">
+              <a href="index.html#contact" class="btn btn--primary btn--lg" data-magnetic>
+                <span class="btn__label">Обсудить проект</span>
+                <span class="btn__arrow">→</span>
+              </a>
+              <a href="index.html#projects" class="btn btn--ghost btn--lg" data-magnetic>
+                <span class="btn__label">Смотреть кейсы</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="expander" id="textExpander" aria-hidden="true">
+      <div class="expander__backdrop" data-expander-close></div>
+      <div class="expander__card">
+        <button class="expander__close" data-expander-close aria-label="Закрыть">
+          <span class="expander__close-x">✕</span>
+        </button>
+        <span class="expander__tag">Обо мне</span>
+        <p class="expander__title">Привет, меня зовут <span class="grad">Дмитрий Ширяев</span></p>
+        <div class="expander__body">
+          <p class="expander__text">
+            Веб-разработчик из Нижнего Новгорода. Фриланс для меня — не просто
+            подработка, а способ прокачивать навыки и сразу применять их в реальных
+            проектах. При этом у меня есть основная работа вне IT, поэтому я особенно
+            ценю чёткость, время, сроки и понятные задачи — и сам даю клиенту именно
+            такой формат сотрудничества.
+          </p>
+          <p class="expander__text">
+            <strong>Мой подход простой:</strong> не трачу время на ТЗ на 40 страниц
+            (если нет такой необходимости), а быстро собираю рабочий MVP (Minimum
+            Viable Product) — минимально жизнеспособный продукт по вашему ТЗ (как
+            минимум чётко описанные идея продукта, целевая аудитория, одна главная
+            цель, 1–3 ключевые функции с критериями готовности и сценарии
+            использования, а также указано, что не войдёт в первую версию). Для этого
+            использую вайб-кодинг, получаю базовый код, а дальше всё докручиваю
+            вручную — добавляю логику, проверяю UX, тестирую на реальных сценариях.
+            Если нужно — подтягиваю различные нейросети для консультации. Я не просто
+            «нажимаю кнопку» в нейросети: я ставлю задачу, контролирую результат и
+            отвечаю за то, что отдаю клиенту.
+          </p>
+          <h3 class="expander__subtitle">Что уже делал:</h3>
+          <ul class="expander__list">
+            <li>
+              лендинги с калькулятором цены и сроков (проработка УТП с базовой
+              аналитикой по аудитории и конкурентам);
+            </li>
+            <li>ВК-чат-боты с живым диалогом с пользователями через ProxyAPI;</li>
+            <li>конструкторы с 3D-визуализацией.</li>
+          </ul>
+          <p class="expander__text">
+            Работаю с HTML/CSS, Vanilla JS, а для более сложных задач беру React, Vite
+            и Tailwind. Для ботов использую VK API и ProxyAPI, а весь процесс держу в
+            Git/GitHub — чтобы было прозрачно и удобно передавать проект дальше.
+          </p>
+          <p class="expander__text">
+            Для меня важно доводить всё до конца, соблюдать договорённости и оставаться
+            на связи. Объясняю всё простым языком: без сложного жаргона и без
+            «страшилок» про баги. Ещё я быстро учусь: и даже сейчас прохожу курс в
+            Zerocoder и постоянно пробую новые инструменты — прогресс показываю в блоге.
+          </p>
+          <blockquote class="expander__quote">
+            Мой девиз: «Делаю то, что работает сегодня. Изучаю то, что будет работать
+            завтра!»
+          </blockquote>
+          <p class="expander__text">
+            Если у тебя есть идея — давай превратим её в рабочий продукт: твоя идея
+            плюс мой промпт — и получаем результат. 😊
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy">© 2026 Дмитрий Ширяев — веб-разработка с вайб-кодингом · Сайт обновлён 13.09.2026</p>
+        <a href="index.html#hero" class="footer__top">Наверх ↑</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js?v=23"></script>
+  </body>
+</html>

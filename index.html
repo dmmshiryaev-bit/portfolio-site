@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дмитрий Ширяев — сайт, калькулятор или бот за 1–3 дня</title>
+    <meta name="description" content="Вайб-кодинг + ручная доработка. Рабочий сайт, калькулятор или чат-бот за 1–3 дня. В 3–5 раз дешевле студии. Без шаблонов." />
+    <link rel="canonical" href="/" />
+    <meta property="og:title" content="Дмитрий Ширяев — сайт или бот за 1–3 дня" />
+    <meta property="og:description" content="Лендинг с калькулятором за 3 дня, а не за месяц. Вайб-кодинг + ручная доработка логики и UX." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://dmitry-shiryaev.vercel.app/" />
+    <meta name="author" content="Дмитрий Ширяев" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://dmitry-shiryaev.vercel.app/#website",
+          "name": "Дмитрий Ширяев — веб-разработчик",
+          "alternateName": "Лендинги, калькуляторы, чат-боты за 1–3 дня",
+          "url": "https://dmitry-shiryaev.vercel.app/",
+          "inLanguage": "ru",
+          "publisher": { "@id": "https://dmitry-shiryaev.vercel.app/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://dmitry-shiryaev.vercel.app/#person",
+          "name": "Дмитрий Ширяев",
+          "url": "https://dmitry-shiryaev.vercel.app/",
+          "jobTitle": "Веб-разработчик (вайб-кодинг)",
+          "email": "mailto:DmmShiryev@yandex.ru",
+          "knowsAbout": ["лендинги", "калькуляторы цен", "чат-боты с ИИ", "MVP", "SEO", "GEO-продвижение"],
+          "sameAs": [
+            "https://max.ru/u/f9LHodD0cOKdJPhYGMLWhbecW1BcaRQ_45GFe5sC0_zaYHqW1RkVtHioQXk",
+            "https://github.com/dmmshiryaev-bit",
+            "https://dmmshiryaev-bit.github.io/habit-tracker"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://dmitry-shiryaev.vercel.app/#webpage",
+          "url": "https://dmitry-shiryaev.vercel.app/",
+          "name": "Дмитрий Ширяев — сайт, калькулятор или бот за 1–3 дня",
+          "description": "Вайб-кодинг + ручная доработка. Рабочий сайт, калькулятор или чат-бот за 1–3 дня.",
+          "isPartOf": { "@id": "https://dmitry-shiryaev.vercel.app/#website" },
+          "about": { "@id": "https://dmitry-shiryaev.vercel.app/#person" },
+          "inLanguage": "ru",
+          "datePublished": "2026-09-13",
+          "dateModified": "2026-09-13"
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css?v=23" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="orb orb--a" data-depth="0.25"></div>
+      <div class="orb orb--b" data-depth="0.45"></div>
+      <div class="orb orb--c" data-depth="0.15"></div>
+      <div class="bg__grid"></div>
+    </div>
+
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor__dot"></div>
+      <div class="cursor__ring"></div>
+    </div>
+
+    <header class="header">
+      <div class="container header__inner">
+        <nav class="nav" id="nav">
+          <a href="#hero" class="nav__link">Главная</a>
+          <a href="#services" class="nav__link">Услуги</a>
+          <a href="#projects" class="nav__link">Проекты</a>
+          <a href="#contact" class="nav__link">Контакты</a>
+          <a href="about.html" class="nav__link">Обо мне</a>
+          <a href="#contact" class="btn btn--primary nav__cta">Обсудить проект</a>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4.5"></circle>
+              <path d="M12 1.5v2.5M12 20v2.5M3.34 3.34l1.77 1.77M18.89 18.89l1.77 1.77M1.5 12H4M20 12h2.5M3.34 20.66l1.77-1.77M18.89 5.11l1.77-1.77"></path>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"></path>
+            </svg>
+          </button>
+          <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <div class="hero__badges reveal">
+              <span class="chip"><span class="chip__dot"></span>Свободен для нового проекта</span>
+              <span class="chip chip--ghost">Вайб-кодинг + ручная доводка</span>
+            </div>
+
+            <h1 class="hero__title reveal" data-delay="100">
+              Лендинг с <span class="grad">калькулятором</span><br />
+              за 3 дня, а не за месяц
+            </h1>
+
+            <p class="hero__subtitle reveal" data-delay="200">
+              Собираю рабочую версию на вайб-кодинге, дорабатываю логику и UX руками.
+              Платите за дни работы, а не за недели ожидания.
+            </p>
+
+            <div class="hero__cta reveal" data-delay="300">
+              <a href="#contact" class="btn btn--primary" data-magnetic>
+                <span class="btn__label">Обсудить проект</span>
+                <span class="btn__arrow">→</span>
+              </a>
+              <a href="#projects" class="btn btn--ghost" data-magnetic>
+                <span class="btn__label">Смотреть кейсы</span>
+              </a>
+            </div>
+
+            <div class="hero__stats reveal" data-delay="400">
+              <div class="stat">
+                <span class="stat__num"><span data-count="3">0</span><span class="stat__suffix">дня</span></span>
+                <span class="stat__label">на MVP</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">в <span data-count="3">0</span>–<span data-count="5">0</span> раз</span>
+                <span class="stat__label">дешевле студии</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num"><span data-count="2">0</span>–<span data-count="3">0</span></span>
+                <span class="stat__label">проекта параллельно</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" data-delay="250" data-parallax-scroll="0.12">
+            <div class="terminal tilt" data-tilt>
+              <div class="terminal__bar">
+                <span class="terminal__dot terminal__dot--red"></span>
+                <span class="terminal__dot terminal__dot--yellow"></span>
+                <span class="terminal__dot terminal__dot--green"></span>
+                <span class="terminal__type" id="terminalType"></span>
+              </div>
+              <div class="terminal__body" id="terminalBody"></div>
+            </div>
+            <div class="hero__card-float hero__card-float--a" data-depth="0.35">
+              <span class="hero__card-float-icon">🧮</span>
+              <div class="hero__card-float-text">
+                <strong>Калькулятор</strong>
+                <span>считает цену за секунды</span>
+              </div>
+            </div>
+            <div class="hero__card-float hero__card-float--b" data-depth="0.5">
+              <span class="hero__card-float-icon">🤖</span>
+              <div class="hero__card-float-text">
+                <strong>AI-бот</strong>
+                <span>живой диалог вместо кнопок</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Лендинги</span><i>✦</i>
+          <span>Калькуляторы</span><i>✦</i>
+          <span>Чат-боты для ВК</span><i>✦</i>
+          <span>React-приложения</span><i>✦</i>
+          <span>SEO</span><i>✦</i>
+          <span>GEO</span><i>✦</i>
+          <span>Вайб-кодинг</span><i>✦</i>
+          <span>Лендинги</span><i>✦</i>
+          <span>Калькуляторы</span><i>✦</i>
+          <span>Чат-боты для ВК</span><i>✦</i>
+          <span>React-приложения</span><i>✦</i>
+          <span>SEO</span><i>✦</i>
+          <span>GEO</span><i>✦</i>
+          <span>Вайб-кодинг</span><i>✦</i>
+        </div>
+      </div>
+
+      <section class="section services" id="services">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Услуги</span>
+            <h2 class="section__title">Что я делаю</h2>
+            <p class="section__sub">Четыре формата работы — под задачу, бюджет и сроки. У каждой услуги прозрачный состав работ и понятный результат.</p>
+          </div>
+
+          <div class="services__grid">
+            <button type="button" class="service-tile reveal" data-service-open="serviceModal1" aria-haspopup="dialog">
+              <span class="service-tile__num">01</span>
+              <span class="service-tile__label">Лендинг под ключ</span>
+              <h3 class="service-tile__title">Лендинг, который продаёт, а не просто «висит»</h3>
+              <span class="service-tile__hint">Развернуть условия →</span>
+            </button>
+
+            <button type="button" class="service-tile reveal" data-delay="100" data-service-open="serviceModal2" aria-haspopup="dialog">
+              <span class="service-tile__num">02</span>
+              <span class="service-tile__label">Чат-бот для ВКонтакте с AI-интеграцией</span>
+              <h3 class="service-tile__title">Бот, который реально отвечает, а не показывает кнопки</h3>
+              <span class="service-tile__hint">Развернуть условия →</span>
+            </button>
+
+            <button type="button" class="service-tile reveal" data-delay="200" data-service-open="serviceModal3" aria-haspopup="dialog">
+              <span class="service-tile__num">03</span>
+              <span class="service-tile__label">Калькулятор и интерактивный инструмент</span>
+              <h3 class="service-tile__title">Калькулятор, который закрывает возражения и повышает конверсию</h3>
+              <span class="service-tile__hint">Развернуть условия →</span>
+            </button>
+
+            <button type="button" class="service-tile reveal" data-delay="300" data-service-open="serviceModal4" aria-haspopup="dialog">
+              <span class="service-tile__num">04</span>
+              <span class="service-tile__label">MVP под задачу (вайб-кодинг)</span>
+              <h3 class="service-tile__title">MVP за 3–5 дней: проверенная гипотеза без лишних бюджетов</h3>
+              <span class="service-tile__hint">Развернуть условия →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Как мы работаем</span>
+            <h2 class="section__title">Пять шагов до результата</h2>
+            <p class="section__sub">Прозрачный процесс без «40-страничного ТЗ» и сюрпризов: от идеи до готового проекта.</p>
+          </div>
+
+          <div class="solution__list process__list">
+            <article class="solution-item reveal">
+              <button type="button" class="solution-item__toggle" aria-expanded="false" aria-controls="processStep1">
+                <span class="solution-item__num">01</span>
+                <span class="solution-item__text">
+                  <span class="solution-item__name">Фиксация задачи</span>
+                </span>
+                <span class="solution-item__hint" aria-hidden="true"></span>
+              </button>
+              <div class="solution-item__panel" id="processStep1">
+                <p>
+                  Ты присылаешь идею, примеры, боли. Я задаю уточняющие вопросы и фиксирую
+                  требования в одном документе — без 40 страниц.
+                </p>
+              </div>
+            </article>
+            <article class="solution-item reveal" data-delay="100">
+              <button type="button" class="solution-item__toggle" aria-expanded="false" aria-controls="processStep2">
+                <span class="solution-item__num">02</span>
+                <span class="solution-item__text">
+                  <span class="solution-item__name">Промпт → каркас</span>
+                </span>
+                <span class="solution-item__hint" aria-hidden="true"></span>
+              </button>
+              <div class="solution-item__panel" id="processStep2">
+                <p>Генерирую базовый код в Open Code. Это экономит 1–2 дня на рутине.</p>
+              </div>
+            </article>
+            <article class="solution-item reveal" data-delay="200">
+              <button type="button" class="solution-item__toggle" aria-expanded="false" aria-controls="processStep3">
+                <span class="solution-item__num">03</span>
+                <span class="solution-item__text">
+                  <span class="solution-item__name">Докрутка вручную</span>
+                </span>
+                <span class="solution-item__hint" aria-hidden="true"></span>
+              </button>
+              <div class="solution-item__panel" id="processStep3">
+                <p>
+                  Добавляю логику, UX, анимации, тесты. Проверяю на реальных сценариях:
+                  что если нажать не туда, что если медленный интернет.
+                </p>
+              </div>
+            </article>
+            <article class="solution-item reveal" data-delay="300">
+              <button type="button" class="solution-item__toggle" aria-expanded="false" aria-controls="processStep4">
+                <span class="solution-item__num">04</span>
+                <span class="solution-item__text">
+                  <span class="solution-item__name">Демо и правки</span>
+                </span>
+                <span class="solution-item__hint" aria-hidden="true"></span>
+              </button>
+              <div class="solution-item__panel" id="processStep4">
+                <p>
+                  Показываю MVP на тестовом хостинге. Ты щёлкаешь, проверяешь.
+                  Если нужно — правлю.
+                </p>
+              </div>
+            </article>
+            <article class="solution-item reveal" data-delay="400">
+              <button type="button" class="solution-item__toggle" aria-expanded="false" aria-controls="processStep5">
+                <span class="solution-item__num">05</span>
+                <span class="solution-item__text">
+                  <span class="solution-item__name">Оплата по этапам</span>
+                </span>
+                <span class="solution-item__hint" aria-hidden="true"></span>
+              </button>
+              <div class="solution-item__panel" id="processStep5">
+                <div class="process__pay">
+                  <h4 class="process__pay-title">Схема оплаты — прозрачная и безопасная для обеих сторон</h4>
+                  <p class="process__pay-intro">Плати поэтапно — без стресса и рисков. Я не прошу 100 % вперёд.</p>
+                  <ul class="process__pay-list">
+                    <li>
+                      <span class="process__pay-percent">40 %</span>
+                      <span class="process__pay-desc">— когда утвердили задачу и договорились по срокам. Это фиксирует старт: я беру проект в работу, мы двигаемся дальше.</span>
+                    </li>
+                    <li>
+                      <span class="process__pay-percent">40 %</span>
+                      <span class="process__pay-desc">— когда ты видишь первый рабочий результат (MVP) и понимаешь, что идём в нужную сторону. На этом этапе ты уже можешь пощёлкать, проверить логику, дать первые правки.</span>
+                    </li>
+                    <li>
+                      <span class="process__pay-percent">20 %</span>
+                      <span class="process__pay-desc">— в самом конце, когда всё докручено, загружено и готово к работе: правки учтены, деплой сделан, доступы и материалы переданы.</span>
+                    </li>
+                  </ul>
+                  <p class="process__pay-closing">Никаких сюрпризов: ты контролируешь процесс на каждом этапе, а я делаю так, чтобы тебе хотелось спокойно закрыть финальный платёж. 😊</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section calculator" id="calc">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Калькулятор</span>
+            <h2 class="section__title">Считайте стоимость и срок онлайн</h2>
+            <p class="section__sub">Выберите задачу и опции — цена и срок пересчитаются сразу. Точную стоимость подтвержу после короткого разговора.</p>
+          </div>
+
+          <div class="calc reveal">
+            <div class="calc__side">
+              <div class="calc__pool">
+                <span class="calc__label">Что нужно сделать?</span>
+                <div class="calc__services">
+                  <button type="button" class="calc-service is-active" data-calc-service="landing">Лендинг</button>
+                  <button type="button" class="calc-service" data-calc-service="bot">Чат-бот</button>
+                  <button type="button" class="calc-service" data-calc-service="calc">Калькулятор</button>
+                  <button type="button" class="calc-service" data-calc-service="mvp">MVP</button>
+                </div>
+              </div>
+
+              <div class="calc__pool">
+                <span class="calc__label">Вариант</span>
+                <div class="calc__radios" id="calcBase"></div>
+              </div>
+
+              <div class="calc__pool">
+                <span class="calc__label">Дополнительно</span>
+                <div class="calc__checks" id="calcOptions"></div>
+              </div>
+            </div>
+
+            <div class="calc__result">
+              <span class="calc__label">Ваш расчёт</span>
+              <div class="calc__price"><span id="calcPrice">6 000</span> <span class="calc__cur">₽</span></div>
+              <div class="calc__time" id="calcTime">Срок: 2–3 дня</div>
+              <p class="calc__note">В стоимость уже входит адаптив, формы и размещение на хостинге. Правки — по договорённости.</p>
+              <a href="#contact" class="btn btn--primary calc__cta" id="calcSubmit">
+                <span class="btn__label">Отправить этот расчёт</span>
+                <span class="btn__arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pains" id="about">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Проблема</span>
+            <h2 class="section__title">Почему вы всё ещё без сайта</h2>
+            <p class="section__sub">Узнаёте себя? Эти три сценария я слышу от заказчиков почти каждую неделю.</p>
+          </div>
+
+          <div class="pains__grid reveal-group">
+            <article class="card-tile card-tile--pain">
+              <img class="card-tile__img" src="img/Студия.png" alt="Студия" />
+              <h3 class="card-tile__title">Студия — от 150 000 ₽ и более месяца простоя</h3>
+              <p class="card-tile__text">
+                Пока вы ждёте, конкуренты забирают по 3–5 заявок в день — это 45–75
+                упущенных лидов в месяц. И это только по рекламе, которую вы уже
+                оплатили.
+              </p>
+            </article>
+            <article class="card-tile card-tile--pain">
+              <img class="card-tile__img" src="img/Калькулятор.png" alt="Калькулятор" />
+              <h3 class="card-tile__title">Конструктор — это «сайт-витрина»</h3>
+              <p class="card-tile__text">
+                Шаблонный калькулятор либо не считает, либо считает неправильно. В итоге
+                клиент видит цену, пугается и уходит. По статистике, 70% отказов на
+                лендингах малого бизнеса — из-за неработающих или непонятных расчётов.
+              </p>
+            </article>
+            <article class="card-tile card-tile--pain">
+              <img class="card-tile__img" src="img/чатт_бот.png" alt="Чат-бот" />
+              <h3 class="card-tile__title">Бот-меню — это цифровой тупик</h3>
+              <p class="card-tile__text">
+                Клиент пишет «сколько стоит?», видит кнопки и закрывает диалог. В
+                среднем, 80% таких чатов закрываются в первые 10 секунд без ответа.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section solution" id="process">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Решение</span>
+            <h2 class="section__title">Как я это закрываю</h2>
+            <p class="section__sub">Один разработчик, который доводит до конца. Три шага до рабочего результата.</p>
+          </div>
+
+          <div class="solution__list">
+            <article class="solution-item reveal">
+              <span class="solution-item__num">01</span>
+              <div class="solution-item__content">
+                <h3>Собираю рабочий MVP за 1–3 дня</h3>
+                <p>
+                  Вы запускаетесь на этой неделе, а не в следующем месяце. Цена в 3–5 раз ниже
+                  студии, потому что вайб-кодинг экономит рутину, а не качество.
+                </p>
+                <span class="solution-item__result">→ Результат: вы принимаете первые заявки уже через 48 часов. Сайт размещается на хостинге, подключается домен. Заявки падают прямо в мессенджер — вы видите их сразу и можете ответить с телефона за пару секунд.</span>
+              </div>
+            </article>
+            <article class="solution-item reveal" data-delay="100">
+              <span class="solution-item__num">02</span>
+              <div class="solution-item__content">
+                <h3>Пишу логику калькулятора под вашу нишу</h3>
+                <p>
+                  Калькулятор считает реальную цену, закрывает возражения, заявки приходят.
+                  Не шаблонный блок, а инструмент продаж под конкретный продукт.
+                </p>
+                <span class="solution-item__result">→ Результат: калькулятор закрывает 3 главных возражения клиента («дорого», «долго», «не подойдёт») ещё до звонка. Клиент сам выбирает опции, видит итоговую цену и нажимает «Заказать». Конверсия в заявку растёт в 2–3 раза по сравнению с кнопкой «Позвоните нам».</span>
+              </div>
+            </article>
+            <article class="solution-item reveal" data-delay="200">
+              <span class="solution-item__num">03</span>
+              <div class="solution-item__content">
+                <h3>Подключаю AI-диалог через ProxyAPI</h3>
+                <p>
+                  Бот отвечает живым текстом, а не меню кнопок. Поддержка разгружается,
+                  клиенты получают ответ за секунды, а не ждут человека.
+                </p>
+                <span class="solution-item__result">→ Результат: бот отвечает на типовые вопросы (цена, сроки, доставка) в течение 5 секунд. Вы разгружаете себя на 60–70% от рутины. Ночью бот не спит — вы не теряете заявки, пока отдыхаете.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Кейсы</span>
+            <h2 class="section__title">Что уже сделал</h2>
+            <p class="section__sub">Живые кейсы: одно — продаёт, второе — развлекает, третье — отвечает.</p>
+          </div>
+
+          <div class="projects__grid reveal-group">
+            <article class="project-card tilt" data-tilt>
+              <div class="project-card__screen project-card__screen--calc">
+                <img class="project-card__img" src="img/шкаф.jpg" alt="Лендинг с калькулятором — Шкаф для санузла" loading="lazy" />
+                <span class="project-card__tag">MVP за 2 дня</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Шкаф для санузла + калькулятор</h3>
+                <p class="project-card__desc">
+                  Лендинг + калькулятор. Считает цену за секунды, закрывает возражения про
+                  неустойку и приёмку.
+                </p>
+                <a class="project-card__link" href="https://billowing-boat-d3ac.dmmshiryaev.workers.dev/" target="_blank" rel="noopener">Открыть проект →</a>
+                <div class="project-card__meta">HTML5 / CSS3 / Vanilla JS</div>
+              </div>
+            </article>
+
+            <article class="project-card tilt" data-tilt>
+              <div class="project-card__screen project-card__screen--habit">
+                <img class="project-card__img" src="img/трекер привычек.jpg" alt="Дневник привычек — трекер привычек" loading="lazy" />
+                <span class="project-card__tag">Каркас за 1 день</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Дневник привычек</h3>
+                <p class="project-card__desc">
+                  React-приложение с геймификацией и статистикой. Каркас за 1 день,
+                  доработки и анимации — ещё 2 дня.
+                </p>
+                <a class="project-card__link" href="https://dmmshiryaev-bit.github.io/habit-tracker" target="_blank" rel="noopener">Открыть проект →</a>
+                <div class="project-card__meta">React 18 / Tailwind / Vite</div>
+              </div>
+            </article>
+
+            <article class="project-card tilt" data-tilt>
+              <div class="project-card__screen project-card__screen--bot">
+                <img class="project-card__img" src="img/чат  бот.png" alt="ВК-бот «Блюда от бот-повара»" loading="lazy" />
+                <span class="project-card__tag">База + тест за 2 дня</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">ВК-бот «Блюда от бот-повара»</h3>
+                <p class="project-card__desc">
+                  Живой диалог вместо кнопок: бот отвечает через AI. Базовая логика и
+                  интеграция — 1 день, тест — ещё 1.
+                </p>
+                <div class="project-card__meta">VK API / ProxyAPI</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section offer" id="offer">
+        <div class="container">
+          <div class="offer-box reveal" data-tilt>
+            <div class="offer-box__glow"></div>
+            <div class="section__head section__head--left reveal">
+              <span class="section__tag">Оффер</span>
+              <h2 class="section__title">Что вы получаете за 1–3 дня</h2>
+            </div>
+
+            <ul class="offer__list">
+              <li>
+                <span class="offer__check">✓</span>
+                <div>
+                  <strong>Рабочий лендинг, калькулятор или бот:</strong>
+                  адаптив под мобильные, загрузка под 1 секунду, чистый код на HTML/CSS/JS
+                  или React. Не шаблон — под вашу задачу.
+                </div>
+              </li>
+              <li>
+                <span class="offer__check">✓</span>
+                <div>
+                  <strong>Код, который легко передать:</strong>
+                  структура и комментарии, понятные другому разработчику. Захотите доработать
+                  у кого-то ещё — не придётся переписывать с нуля.
+                </div>
+              </li>
+              <li>
+                <span class="offer__check">✓</span>
+                <div>
+                  <strong>SEO и GEO — по запросу:</strong>
+                  мета-теги, микроразметка Schema.org, структура под поисковики и ответы ИИ.
+                  Добавляю, если сайту нужно работать на заявки.
+                </div>
+              </li>
+            </ul>
+
+            <div class="offer__notes">
+              <div class="note note--urgency">
+                <span class="note__icon">⚡</span>
+                <p><strong>Беру 2–3 проекта одновременно.</strong> Если нужно запуститься на этой
+                неделе — напишите сегодня, и я скажу, успею ли взяться или когда будет свободное окно.</p>
+              </div>
+              <div class="note note--risk">
+                <span class="note__icon">🛡</span>
+                <p><strong>Без риска:</strong> сначала показываю MVP на тестовом хостинге. Вы смотрите,
+                щёлкаете, проверяете. Если что-то не так — правлю. Финальную оплату — после проверки
+                рабочего результата.</p>
+              </div>
+            </div>
+
+            <div class="offer__cta">
+              <a href="#contact" class="btn btn--primary btn--lg" data-magnetic>
+                <span class="btn__label">Обсудить проект</span>
+                <span class="btn__arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section learning">
+        <div class="container">
+          <div class="learning-box reveal">
+            <span class="learning-box__spark">✦</span>
+            <p>
+              <strong>Осваиваю:</strong> контент и лид-магниты, визуалы и инфографика,
+              мультимедиа (jingle, озвучка, видео с аватаром). Показываю прогресс в блоге.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="section__tag">Контакты</span>
+            <h2 class="section__title">Обсудить проект</h2>
+            <p class="section__sub">
+              Опишите задачу в паре строк — отвечу в тот же день и скажу, сколько времени и
+              бюджета нужно.
+            </p>
+          </div>
+
+          <div class="contact__grid">
+            <div class="contact__info reveal">
+              <div class="contact__card">
+                <a href="https://api.whatsapp.com/send?phone=79648342726&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener" class="contact__link" data-magnetic>
+                  <span class="contact__link-icon contact__link-icon--wa">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a14 14 0 0 1-1.5-.6c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7S8.3 8.5 8.5 8.3c.1-.2.4-.3.5-.3h.5c.1 0 .3 0 .5.4l.8 2c.1.1.1.3 0 .4l-.5.6c-.1.2-.2.3-.1.5.5.9 1.3 1.7 2.1 2.1.3.2.5.1.7-.1l1-1c.2-.2.3-.2.5-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.1Z"/></svg>
+                  </span>
+                  <span class="contact__link-text">
+                    <strong>WhatsApp</strong>
+                    <small>написать заявку в личку</small>
+                  </span>
+                  <span class="contact__link-arr">→</span>
+                </a>
+              </div>
+              <div class="contact__card">
+                <a href="https://max.ru/u/f9LHodD0cOKdJPhYGMLWhbecW1BcaRQ_45GFe5sC0_zaYHqW1RkVtHioQXk" target="_blank" rel="noopener" class="contact__link" data-magnetic>
+                  <span class="contact__link-icon contact__link-icon--tg">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 18.9 19c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6L18.5 6.4c.3-.3-.1-.4-.5-.2L7.1 13l-4.4-1.4c-1-.3-1-1 .2-1.4l17.6-6.8c.8-.3 1.5.2 1.4 1.2Z"/></svg>
+                  </span>
+                  <span class="contact__link-text">
+                    <strong>mах</strong>
+                    <small>быстрый ответ</small>
+                  </span>
+                  <span class="contact__link-arr">→</span>
+                </a>
+              </div>
+              <div class="contact__card">
+                <a href="mailto:DmmShiryev@yandex.ru" class="contact__link" data-magnetic>
+                  <span class="contact__link-icon contact__link-icon--mail">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+                  </span>
+                  <span class="contact__link-text">
+                    <strong>Почта</strong>
+                    <small>DmmShiryev@yandex.ru</small>
+                  </span>
+                  <span class="contact__link-arr">→</span>
+                </a>
+              </div>
+              <p class="contact__hint">Отвечаю в тот же день. Беру 2–3 проекта одновременно.</p>
+            </div>
+
+            <form class="contact__form reveal" data-delay="150" id="contactForm" novalidate>
+              <div class="form__row">
+                <label class="form__field">
+                  <span class="form__label">Ваше имя</span>
+                  <input type="text" name="name" class="form__input" placeholder="Александр" required />
+                </label>
+                <label class="form__field">
+                  <span class="form__label">Куда ответить</span>
+                  <input type="text" name="contact" class="form__input" placeholder="@mах или +7…" required />
+                </label>
+              </div>
+              <label class="form__field">
+                <span class="form__label">Что нужно сделать</span>
+                <textarea name="message" class="form__input form__input--area" rows="4" placeholder="Лендинг с калькулятором для столярной мастерской…" required></textarea>
+              </label>
+              <button type="submit" class="btn btn--primary btn--lg form__submit" data-magnetic>
+                <span class="btn__label">Отправить заявку</span>
+                <span class="btn__arrow">→</span>
+              </button>
+              <p class="form__consent">
+                Нажимая «Отправить заявку», вы соглашаетесь с
+                <button type="button" class="form__consent-link" data-consent-open>политикой конфиденциальности</button>.
+              </p>
+              <p class="form__success" id="formSuccess">Заявка отправлена! Отвечу в тот же день — проверяйте мессенджер. ✅</p>
+              <p class="form__error" id="formError">Не удалось отправить. Попробуйте ещё раз или напишите напрямую — иконки контактов ниже. 🙏</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="expander" id="serviceModal1" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="serviceTitle1">
+      <div class="expander__backdrop" data-service-close></div>
+      <div class="expander__card">
+        <button class="expander__close" data-service-close aria-label="Закрыть">✕</button>
+        <span class="expander__tag">Услуга 01 · Лендинг под ключ</span>
+        <h2 class="expander__title" id="serviceTitle1">Лендинг, который продаёт, а не просто «висит»</h2>
+        <div class="expander__body">
+          <p class="expander__text">
+            Делаю лендинги и многостраничники, где каждая секция закрывает конкретное
+            возражение клиента. Сразу встраиваю рабочие инструменты: формы, адаптив.
+            Не делаю «картинку ради картинки»: если блок не влияет на конверсию — его
+            не будет.
+          </p>
+          <h3 class="expander__subtitle">Что входит в базовую стоимость</h3>
+          <ul class="expander__list">
+            <li>вёрстка на HTML/CSS + Vanilla JS или React (по задаче);</li>
+            <li>адаптив под мобильные и планшеты;</li>
+            <li>формы с отправкой в выбранный мессенджер.</li>
+          </ul>
+          <h3 class="expander__subtitle">Опции (оплачиваются отдельно)</h3>
+          <ul class="expander__list">
+            <li>
+              <strong>Базовый калькулятор.</strong> Простая логика: фиксированные цены,
+              наценки, скидки, выбор опций из списка. Результат: клиент сразу видит
+              итоговую стоимость без звонка — конверсия растёт за счёт прозрачности.
+            </li>
+            <li>
+              <strong>Продвинутый калькулятор + 3D-визуализация.</strong> Полноценная
+              расчётная логика: габариты, подбор оборудования, сезонные коэффициенты,
+              ограничения по размерам, вывод детализированной сметы. Плюс —
+              интерактивная 3D-визуализация: клиент двигает ползунки — и сразу видит,
+              как меняется модель (например, меняешь размер бассейна — пересчитываются
+              объём и оборудование, а 3D-объект обновляется в реальном времени).
+              Результат: инструмент закрывает 3 главных возражения («дорого», «долго»,
+              «не подойдёт») ещё до звонка, а визуализация помогает принять решение
+              быстрее.
+            </li>
+            <li>
+              <strong>SEO-оптимизация.</strong> Подбор семантики, проработка заголовков
+              H1–H3, мета-тегов, валидного HTML, оптимизация скорости загрузки.
+              Результат: лендинг сразу готов к органическому трафику, без необходимости
+              потом «переделывать всё ради SEO».
+            </li>
+            <li>
+              <strong>GEO-подготовка под локальный поиск и нейросети.</strong> Включение
+              гео-фраз (город, район, ориентиры), разметка Schema.org для контактов и
+              услуг, подготовка FAQ в формате «вопрос-ответ» — чтобы лендинг чаще попадал
+              в выдачу по локальным запросам и в ответы нейросетей (Яндекс Нейро, Алиса).
+            </li>
+          </ul>
+          <p class="expander__result">
+            → Результат: готовый сайт на хостинге (GitHub Pages или другой),
+            подключённый домен, понятная структура проекта, чтобы другой разработчик мог
+            подхватить. Ты получаешь не «красивую картинку», а инструмент, который
+            собирает заявки.
+          </p>
+          <a href="#calc" class="btn btn--primary" data-magnetic data-calc-open="landing">
+            <span class="btn__label">Рассчитать стоимость моего лендинга (с указанием нужных опций)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="expander" id="serviceModal2" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="serviceTitle2">
+      <div class="expander__backdrop" data-service-close></div>
+      <div class="expander__card">
+        <button class="expander__close" data-service-close aria-label="Закрыть">✕</button>
+        <span class="expander__tag">Услуга 02 · Чат-бот для ВКонтакте с AI-интеграцией</span>
+        <h2 class="expander__title" id="serviceTitle2">Бот, который реально отвечает, а не показывает кнопки</h2>
+        <div class="expander__body">
+          <p class="expander__text">
+            Делаю ботов для сообществ ВК, которые ведут осмысленный диалог, а не выдают
+            шаблонные ответы. Использую ProxyAPI для подключения AI, продумываю
+            сценарии: приветствие, FAQ, сбор контактов, передача оператору.
+          </p>
+          <h3 class="expander__subtitle">Что входит</h3>
+          <ul class="expander__list">
+            <li>настройка бота и сценариев диалога;</li>
+            <li>интеграция с ProxyAPI и контроль ответов (чтобы не было «галлюцинаций»);</li>
+            <li>логика передачи диалога человеку (если вопрос сложный);</li>
+            <li>базовая аналитика: сколько диалогов, сколько дошло до оператора.</li>
+          </ul>
+          <p class="expander__result">
+            → Результат: бот, который разгружает поддержку на 60–70 % от рутины, отвечает
+            в течение 5 секунд и не теряет обращения ночью. Ты не пропускаешь заявки,
+            даже когда не онлайн.
+          </p>
+          <a href="#calc" class="btn btn--primary" data-magnetic data-calc-open="bot">
+            <span class="btn__label">Обсудить бота для моего сообщества</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="expander" id="serviceModal3" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="serviceTitle3">
+      <div class="expander__backdrop" data-service-close></div>
+      <div class="expander__card">
+        <button class="expander__close" data-service-close aria-label="Закрыть">✕</button>
+        <span class="expander__tag">Услуга 03 · Калькулятор и интерактивный инструмент</span>
+        <h2 class="expander__title" id="serviceTitle3">Калькулятор, который закрывает возражения и повышает конверсию</h2>
+        <div class="expander__body">
+          <p class="expander__text">
+            Пишу калькуляторы с реальной логикой расчётов под твою нишу. Главная фишка —
+            не просто цифры, а возможность «пощупать» продукт: добавляю 2D/3D-визуализацию,
+            чтобы клиент видел результат расчёта сразу.
+          </p>
+          <h3 class="expander__subtitle">Что входит (подбирается под задачу)</h3>
+          <ul class="expander__list">
+            <li>
+              логика расчётов: скидки, наценки, габариты, подбор оборудования,
+              сезонные коэффициенты, ограничения по размерам;
+            </li>
+            <li>вывод итоговой сметы и подбор опций с детализацией;</li>
+            <li>
+              3D-визуализация в реальном времени: при изменении параметров модель
+              перестраивается (например, меняется размер бассейна — пересчитываются объём
+              и комплектация, а 3D-объект обновляется прямо на странице);
+            </li>
+            <li>валидация и защита от некорректных значений, подсказки и ограничения на ввод.</li>
+          </ul>
+          <p class="expander__result">
+            → Результат: инструмент, который закрывает 3 главных возражения клиента
+            («дорого», «долго», «не подойдёт») ещё до звонка. Конверсия в заявку растёт
+            в 2–3 раза по сравнению с кнопкой «Позвоните нам».
+          </p>
+          <a href="#calc" class="btn btn--primary" data-magnetic data-calc-open="calc">
+            <span class="btn__label">Показать пример калькулятора под мой бизнес</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="expander" id="serviceModal4" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="serviceTitle4">
+      <div class="expander__backdrop" data-service-close></div>
+      <div class="expander__card">
+        <button class="expander__close" data-service-close aria-label="Закрыть">✕</button>
+        <span class="expander__tag">Услуга 04 · MVP под задачу (вайб-кодинг)</span>
+        <h2 class="expander__title" id="serviceTitle4">MVP за 3–5 дней: проверенная гипотеза без лишних бюджетов</h2>
+        <div class="expander__body">
+          <p class="expander__text">
+            Быстро собираю рабочий прототип под твою идею: лендинг, мини-сервис,
+            калькулятор, бот. Использую вайб-кодинг (Open Code) как способ ускорения,
+            но не замены экспертизы: промпт даёт каркас, я отвечаю за логику, UX и тесты.
+          </p>
+          <h3 class="expander__subtitle">Что входит</h3>
+          <ul class="expander__list">
+            <li>фиксация задачи и требований (без 40-страничного ТЗ);</li>
+            <li>промпт-инжиниринг и генерация базового кода;</li>
+            <li>ручная докрутка: логика, UX, анимации, тесты;</li>
+            <li>демо на тестовом хостинге и правки.</li>
+          </ul>
+          <p class="expander__result">
+            → Результат: MVP, который можно показать инвестору, запустить на тест и
+            собрать первые отзывы. Ты экономишь 1–2 дня на рутине, но получаешь чистый,
+            понятный код, который можно развивать дальше.
+          </p>
+          <a href="#calc" class="btn btn--primary" data-magnetic data-calc-open="mvp">
+            <span class="btn__label">Получить оценку MVP за 1 день</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="expander" id="consentModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="consentTitle">
+      <div class="expander__backdrop" data-consent-close></div>
+      <div class="expander__card">
+        <button class="expander__close" data-consent-close aria-label="Закрыть">✕</button>
+        <span class="expander__tag">Конфиденциальность</span>
+        <h2 class="expander__title" id="consentTitle">Политика конфиденциальности</h2>
+        <div class="expander__body">
+          <p class="expander__text">
+            Нажимая кнопку «Отправить заявку», вы соглашаетесь с обработкой персональных данных
+            в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».
+          </p>
+          <h3 class="expander__subtitle">Кто обрабатывает данные</h3>
+          <p class="expander__text">Дмитрий Ширяев — веб-разработчик (оператор персональных данных).</p>
+          <h3 class="expander__subtitle">Какие данные собираются</h3>
+          <p class="expander__text">Имя, контакт для связи (mах или телефон) и текст сообщения. Сайт не использует трекинг и не собирает данные автоматически.</p>
+          <h3 class="expander__subtitle">Зачем нужны данные</h3>
+          <p class="expander__text">Только для того, чтобы ответить на вашу заявку и обсудить проект. Данные не передаются третьим лицам, не используются для рассылок и не публикуются.</p>
+          <h3 class="expander__subtitle">Как долго хранятся</h3>
+          <p class="expander__text">До завершения обсуждения проекта либо до отзыва вашего согласия; после этого данные удаляются.</p>
+          <h3 class="expander__subtitle">Ваши права</h3>
+          <p class="expander__text">
+            Вы можете в любой момент отозвать согласие или попросить удалить свои данные:
+            напишите на <strong>DmmShiryev@yandex.ru</strong> или в мессенджер — отвечу в тот же день
+            и удалю данные в течение 3 рабочих дней.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy">© 2026 Дмитрий Ширяев — веб-разработка с вайб-кодингом · Сайт обновлён 13.09.2026</p>
+        <a href="#hero" class="footer__top">Наверх ↑</a>
+      </div>
+    </footer>
+
+    <script src="js/main.js?v=23"></script>
+  </body>
+</html>
