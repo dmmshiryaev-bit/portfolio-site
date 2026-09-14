@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="header.svg" alt="Дмитрий Ширяев — сайты и Telegram-боты за 1–3 дня" />
+</p>
+
 # Дмитрий Ширяев — сайты и Telegram-боты за 1–3 дня
 
 **Живой сайт:** [dmitry-shiryaev.vercel.app](https://dmitry-shiryaev.vercel.app)
