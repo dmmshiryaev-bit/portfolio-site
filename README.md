@@ -48,3 +48,9 @@
 - E-mail: [DmmShiryev@yandex.ru](mailto:DmmShiryev@yandex.ru)
 - GitHub: [github.com/dmmshiryaev-bit](https://github.com/dmmshiryaev-bit)
 - Проекты: [Habit Tracker](https://dmmshiryaev-bit.github.io/habit-tracker)
+
+## Музыка и озвучка
+
+[Восемь аудиокейсов](audio/README.md): фоновые композиции, мужская озвучка, кулинарный ролик v02 и сигнал для приложения.
+
+[Слушать на сайте](https://dmitry-shiryaev.vercel.app/audio/) · [Полное PDF-портфолио](portfolio.pdf)
